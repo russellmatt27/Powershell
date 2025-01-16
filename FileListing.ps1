@@ -13,7 +13,7 @@ $fileList = Get-ChildItem -Path $directory -File -Recurse |
                   @{Name='Created';Expression={$_.CreationTime}},
                   @{Name='Extension';Expression={$_.Extension}},
                   @{Name='FullPath';Expression={$_.FullName}} |
-    Sort-Object FileName
+    Sort-Object Extension
 
 # Export the file list to a CSV
 $fileList | Export-Csv -Path $outputCsv -NoTypeInformation -Encoding UTF8
